@@ -1,73 +1,123 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-    <title>TraceMe</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
 
-    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d6efd">
 
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    >
+  <title>TraceMe - GPS Tracker</title>
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Manifest de l'application -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Feuille de style Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+  <!-- Feuille de style TraceMe -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>🚶 TraceMe</h1>
-    </header>
+  <header>
+    <h1>🚶 TraceMe</h1>
+    <p>Suivi GPS en temps réel</p>
+  </header>
 
-    <main>
-        <div class="stats">
+  <main>
 
-            <div class="card">
-                <span>Distance</span>
-                <strong id="distance">0.00 km</strong>
-            </div>
+    <div id="status" role="status">
+      Prêt à démarrer
+    </div>
 
-            <div class="card">
-                <span>Durée</span>
-                <strong id="duration">00:00:00</strong>
-            </div>
+    <section
+      class="stats"
+      aria-label="Statistiques du trajet"
+    >
 
-            <div class="card">
-                <span>Vitesse moyenne</span>
-                <strong id="avgSpeed">0.0 km/h</strong>
-            </div>
+      <div class="card">
+        <span>Distance</span>
+        <strong id="distance">0.00 km</strong>
+      </div>
 
-            <div class="card">
-                <span>Altitude</span>
-                <strong id="altitude">N/D</strong>
-            </div>
+      <div class="card">
+        <span>Durée</span>
+        <strong id="duration">00:00:00</strong>
+      </div>
 
-            <div class="card">
-                <span>D+</span>
-                <strong id="elevationGain">0 m</strong>
-            </div>
+      <div class="card">
+        <span>Vitesse moyenne</span>
+        <strong id="avgSpeed">0.0 km/h</strong>
+      </div>
 
-            <div class="card">
-                <span>D-</span>
-                <strong id="elevationLoss">0 m</strong>
-            </div>
+      <div class="card">
+        <span>Vitesse actuelle</span>
+        <strong id="currentSpeed">0.0 km/h</strong>
+      </div>
 
-        </div>
+      <div class="card">
+        <span>Altitude</span>
+        <strong id="altitude">Indisponible</strong>
+      </div>
 
-        <div class="buttons">
-            <button id="startBtn" type="button">▶ START</button>
-            <button id="stopBtn" type="button" disabled>■ STOP</button>
-        </div>
+      <div class="card">
+        <span>Précision GPS</span>
+        <strong id="accuracy">Indisponible</strong>
+      </div>
 
-        <p id="status">Prêt à enregistrer un trajet.</p>
+      <div class="card">
+        <span>D+</span>
+        <strong id="elevationGain">0 m</strong>
+      </div>
 
-        <div id="map"></div>
-    </main>
+      <div class="card">
+        <span>D-</span>
+        <strong id="elevationLoss">0 m</strong>
+      </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    app.jsscript>
+    </section>
+
+    <section
+      class="buttons"
+      aria-label="Commandes du suivi GPS"
+    >
+
+      <button
+        id="startBtn"
+        type="button"
+      >
+        ▶ START
+      </button>
+
+      <button
+        id="stopBtn"
+        type="button"
+        disabled
+      >
+        ■ STOP
+      </button>
+
+    </section>
+
+    <section aria-label="Carte du trajet">
+      <div id="map"></div>
+    </section>
+
+  </main>
+
+  <!-- Bibliothèque Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- JavaScript TraceMe -->
+  < script src="app.js">< /script>
+
 </body>
 </html>
