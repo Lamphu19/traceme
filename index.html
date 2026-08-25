@@ -1,66 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TraceMe</title>
+  <meta charset="UTF-8">
 
-    <link reljson
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
 
-    <link rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <meta name="theme-color" content="#0d6efd">
 
-    <link rel="stylesheet" href="style.css">
+  <title>TraceMe - GPS Tracker</title>
+
+  <!-- Application installable -->
+  ./manifest.json
+
+  <!-- Feuille de style Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+  >
+
+  <!-- Feuille de style de l'application -->
+  ./style.css
 </head>
+
 <body>
 
-<header>
+  <header>
     <h1>🚶 TraceMe</h1>
-</header>
+    <p>Suivi GPS en temps réel</p>
+  </header>
 
-<div class="stats">
+  <main>
 
-    <div class="card">
+    <div id="status" role="status">
+      Prêt à démarrer
+    </div>
+
+    <section class="stats" aria-label="Statistiques du trajet">
+
+      <div class="card">
         <span>Distance</span>
         <strong id="distance">0.00 km</strong>
-    </div>
+      </div>
 
-    <div class="card">
+      <div class="card">
         <span>Durée</span>
         <strong id="duration">00:00:00</strong>
-    </div>
+      </div>
 
-    <div class="card">
+      <div class="card">
         <span>Vitesse moyenne</span>
-        <strong id="avgSpeed">0 km/h</strong>
-    </div>
+        <strong id="avgSpeed">0.0 km/h</strong>
+      </div>
 
-    <div class="card">
+      <div class="card">
+        <span>Vitesse actuelle</span>
+        <strong id="currentSpeed">0.0 km/h</strong>
+      </div>
+
+      <div class="card">
         <span>Altitude</span>
-        <strong id="altitude">0 m</strong>
-    </div>
+        <strong id="altitude">Indisponible</strong>
+      </div>
 
-    <div class="card">
+      <div class="card">
+        <span>Précision GPS</span>
+        <strong id="accuracy">Indisponible</strong>
+      </div>
+
+      <div class="card">
         <span>D+</span>
         <strong id="elevationGain">0 m</strong>
-    </div>
+      </div>
 
-    <div class="card">
+      <div class="card">
         <span>D-</span>
         <strong id="elevationLoss">0 m</strong>
-    </div>
+      </div>
 
-</div>
+    </section>
 
-<div class="buttons">
-    <button id="startBtn">▶ START</button>
-    <button id="stopBtn">■ STOP</button>
-</div>
+    <section class="buttons" aria-label="Commandes du suivi">
 
-<div id="map"></div>
+      <button id="startBtn" type="button">
+        ▶ START
+      </button>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src=">
+      <button id="stopBtn" type="button" disabled>
+        ■ STOP
+      </button>
+
+    </section>
+
+    <section class="map-container" aria-label="Carte du trajet">
+      <div id="map"></div>
+    </section>
+
+  </main>
+
+  <!-- Bibliothèque cartographique Leaflet -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin=""
+  ></script>
+
+  <!-- JavaScript de l'application -->
+  ./app.jsscript>
 
 </body>
 </html>
