@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPS Tracker</title>
+
+  <link rel="manifest" href="manifestlesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>🚶 GPS Trackeran>Distance</span>
+      <strong id="distance">0.00 km</strong>
+    </div>
+
+    <div class="card">
+      <span>Durée</span>
+      <strong id="duration">00:00:00</strong>
+    </div>
+
+    <div class="card">
+      <span>Vit. Moy.</span>
+      <strong id="avgSpeed">0 km/h</strong>
+    </div>
+
+    <div class="card">
+      <span>Altitude</span>
+      <strong id="altitude">0 m</strong>
+    </div>
+
+    <div class="card">
+      <span>D+</span>
+      <strong id="elevationGain">0 m</strong>
+    </div>
+
+    <div class="card">
+      <span>D-</span>
+      <strong id="elevationLoss">0 m</strong>
+    </div>
+
+  </div>
+
+  <div class="buttons">
+    <button id="startBtn">▶ START</button>
+    <button id="stopBtn">■ STOP</button>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></.jsscript>
+
+</body>
+</html>
